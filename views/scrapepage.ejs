@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page Scraper</title>
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="text-center">
+            <h2>Enter Website to analyze</h2>
+            <div class="search">
+            <form id="search-form" name="search" action="/scrapepage" method="get">
+                <input type="text" name="searchvalue" class="form-control input-sm" placeholder="https://www.example.com" />
+                <button type="submit" class="btn btn-primary btn-sm">Analyze</button>
+            </form>
+        </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="datascraped">
+
+            HTML version:            <strong> <%= scrape.htmlver %>  </strong>      <br>
+            Page Title:              <strong> <%= scrape.pagetitle %>   </strong>   <br>
+            Number of Total Links:   <strong> <%= scrape.totalLinks %>   </strong>  <br>
+            Number of Internal Links:<strong> <%= scrape.internalLinks %></strong>  <br>
+            Number of External Links:<strong> <%= scrape.externalLinks %> </strong> <br>
+            Login Form:              <strong> <%= scrape.loginForm %>  </strong>    <br>
+            <h1>Number of heading1: <strong> <%= scrape.header1 %></strong></h1>
+            <h2>Number of heading2: <strong> <%= scrape.header2 %></strong></h2>
+            <h3>Number of heading3: <strong> <%= scrape.header3 %></strong></h3>
+            <h4>Number of heading4: <strong> <%= scrape.header4 %></strong></h4>
+            <h5>Number of heading5: <strong> <%= scrape.header5 %></strong></h5>
+            <h6>Number of heading6: <strong> <%= scrape.header6 %></strong></h6>
+
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+</html>

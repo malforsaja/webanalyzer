@@ -4,13 +4,8 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var request = require('request');
-var cheerio = require('cheerio');
-var fs = require('fs');
-//var session = require('express-session');
 
 var index = require('./routes/index');
-var users = require('./routes/users');
 var scrapepage = require('./routes/scrapepage');
 
 var app = express();
@@ -29,7 +24,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
-app.use('/users', users);
 app.use('/', scrapepage);
 
 //----------------------------------------------------
@@ -55,7 +49,7 @@ app.use('/', scrapepage);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-    var err = new Error('Not Found');
+    let err = new Error('Not Found');
     err.status = 404;
     next(err);
 });
